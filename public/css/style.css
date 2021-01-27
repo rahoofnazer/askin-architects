@@ -18269,7 +18269,7 @@ body[data-bg-image] {
 .wizard > .steps ul li.current a,
 .wizard > .steps ul li.current a:hover,
 .wizard > .steps ul li.current a:active {
-  background: #2250fc;
+  background: #484848;
   color: #ffffff;
 }
 .wizard > .steps ul li.error a,

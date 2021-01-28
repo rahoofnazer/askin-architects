@@ -57,7 +57,7 @@
                             <div class="card-body">
                                 <form id="form1" class="form-validate" action="/form" method="POST">
 
-                                    <input type="text" value="Malappuram" hidden>
+                                    <input type="text" value="Malappuram" name="district" hidden>
 
 
                                     <div class="form-row">
@@ -537,6 +537,13 @@
                                     </div>
               
 
+                                    <div class="input-group date" id="datetimepicker12" data-target-input="nearest" style="display: none;">
+                                        <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker12" placeholder="Select date & time" name="datetime"/>
+                                        <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
+                                            <div class="input-group-text"><i class="icon-calendar"></i></div>
+                                        </div>
+                                    </div>
+
 
 
 
@@ -564,6 +571,96 @@
     <!-- jQuery Steps plugin files-->
     <link href="plugins/jquery-steps/jquery.steps.css" rel="stylesheet">
     <script src="plugins/jquery-steps/jquery.steps.min.js"></script>
+
+    <script src="plugins/moment/moment.min.js"></script>
+    <script src="plugins/bootstrap-datetimepicker/tempusdominus-bootstrap-4.js"></script>
+
+    <script>
+        jQuery(document).ready(function () {
+
+            $('#datetimepicker1').datetimepicker();
+
+            $('#datetimepicker2').datetimepicker({
+                format: 'L'
+            });
+
+            $('#datetimepicker3').datetimepicker({
+                format: 'LT'
+            });
+
+            $('#datetimepicker5').datetimepicker();
+
+            $('#datetimepicker6').datetimepicker({
+                defaultDate: "11/1/2019",
+                disabledDates: [
+                    moment("12/25/2019"),
+                    new Date(2019, 11 - 1, 21),
+                    "11/25/2019 00:53",
+                    "11/26/2019 00:53",
+                    "11/27/2019 00:53",
+                    "11/28/2019 00:53"
+                ]
+            });
+
+            $('#datetimepicker7').datetimepicker();
+            $('#datetimepicker8').datetimepicker({
+                useCurrent: false
+            });
+            $("#datetimepicker7").on("change.datetimepicker", function (e) {
+                $('#datetimepicker8').datetimepicker('minDate', e.date);
+            });
+            $("#datetimepicker8").on("change.datetimepicker", function (e) {
+                $('#datetimepicker7').datetimepicker('maxDate', e.date);
+            });
+
+            $('#datetimepicker9').datetimepicker({
+                icons: {
+                    time: "fa fa-clock",
+                    date: "fa fa-calendar",
+                    up: "fa fa-arrow-up",
+                    down: "fa fa-arrow-down"
+                }
+            });
+            $('#datetimepicker10').datetimepicker({
+                viewMode: 'years'
+            });
+            $('#datetimepicker11').datetimepicker({
+                viewMode: 'months',
+            });
+            $('#datetimepicker12').datetimepicker({
+                daysOfWeekDisabled: [0, 6]
+            });
+
+            $('#datetimepicker13').datetimepicker({
+                inline: true,
+                format: 'L'
+            });
+
+            $('#datetimepicker13_1').datetimepicker({
+                inline: true,
+                format: 'LT'
+            });
+
+            $('#datetimepicker14').datetimepicker({
+                allowMultidate: true,
+                multidateSeparator: ','
+            });
+
+
+            //Modal examples
+            $('#datetimepicker1_modal').datetimepicker();
+
+            $('#datetimepicker2_modal').datetimepicker({
+                format: 'L'
+            });
+
+            $('#datetimepicker3_modal').datetimepicker({
+                format: 'LT'
+            });
+
+        });
+    </script>
+
     <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script> -->
 
    

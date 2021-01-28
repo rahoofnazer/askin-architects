@@ -9,14 +9,9 @@ router.get('/', function(req, res, next) {
 });
 
 
-router.get('/users', function(req, res, next) {
-
-  console.log('called /users')
-  res.render('user/user')
-});
 
 
-router.get('/login',(req,res)=>{
+router.get('/dashboard',(req,res)=>{
 
   res.render('user/dashboard')
 
@@ -36,5 +31,30 @@ router.get('/login',(req,res)=>{
   //   }    
   // })
 })
+
+
+router.get('/mydesign', function(req, res, next) {
+
+  // console.log('called /users')
+  res.render('user/design_requirement')
+});
+
+router.get('/construction', function(req, res, next) {
+
+  // console.log('called /users')
+  res.render('user/construction')
+});
+
+router.get('/documents', function(req, res, next) {
+
+  // console.log('called /users')
+  res.render('user/documents')
+});
+
+router.get('/payment', function(req, res, next) {
+
+  // console.log('called /users')
+  res.render('user/payment')
+});
 
 module.exports = router;

@@ -44,35 +44,36 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="sidebar-wrapper">
         <ul class="nav">
           <li class="nav-item active  ">
-            <a class="nav-link" href="./dashboard.html">
+            <a class="nav-link" href="/user/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
           </li>                                                    
                                                                           {{!-- tab here --}}
           <li class="nav-item ">
-            <a class="nav-link" href="/user/designrequirements">
+            <a class="nav-link" href="/user/mydesign">
                     <i class="far fa-object-group"></i>
               <p>My Design Requirements</p>
             </a>
           </li>
 
           <li class="nav-item ">
-            <a class="nav-link" href="/user/designstatus">
-        <i class="fas fa-home"></i>
-              <p>Design Status</p>
+            <a class="nav-link" href="/user/construction">
+<i class="fas fa-hard-hat"></i>
+              <p>My Construction Status</p>
             </a>
           </li>
           <li class="nav-item ">
-            <a class="nav-link" href="/user/designdocuments">
+            <a class="nav-link" href="/user/documents">
                   <i class="fas fa-folder-open"></i>         
               <p>My Design Documents</p>
             </a>
           </li>
-                    <li class="nav-item ">
+                    
+            <li class="nav-item ">
             <a class="nav-link" href="/user/payment">
                     <i class="fas fa-shopping-cart"></i>
-              <p>Payment</p>
+              <p>My Payment</p>
             </a>
           </li>
 
@@ -106,22 +107,7 @@ The above copyright notice and this permission notice shall be included in all c
             <span class="navbar-toggler-icon icon-bar"></span>
           </button>
           <div class="collapse navbar-collapse justify-content-end">
-            
-            
-            {{!-- <form class="navbar-form">
-              <div class="input-group no-border">
-                <input type="text" value="" class="form-control" placeholder="Search...">
-                <button type="submit" class="btn btn-white btn-round btn-just-icon">
-                  <i class="material-icons">search</i>
-                  <div class="ripple-container"></div>
-                </button>
-              </div>
-            </form> --}}
-
-
-
-                                                              
-
+          
 
 
             <ul class="navbar-nav">
@@ -161,13 +147,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <a href="/user/designrequirements">
+              <a href="/user/mydesign">
               <div class="card card-stats">
                 <div class="card-header card-header-warning card-header-icon">
                   <div class="card-icon">
                     <i class="far fa-object-group"></i>
                   </div>
-                  <p class="card-category">Submitted</p>
+                  <p class="card-category" style="font-weight: 400; color: rgb(78, 78, 78);">Submitted</i></p>
                   <h3 class="card-title" style="font-size: 1.625rem;">My Design Requirements
                   </h3>
                 </div>
@@ -189,14 +175,14 @@ The above copyright notice and this permission notice shall be included in all c
 
             
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <a href="/user/designstatus">
+              <a href="/user/construction">
               <div class="card card-stats">
                 <div class="card-header card-header-success card-header-icon">
                   <div class="card-icon">
-        <i class="fas fa-home"></i>
+<i class="fas fa-hard-hat"></i>
                   </div>
-                  <p class="card-category">New Feature!</p>
-                  <h3 class="card-title"> Design Status</h3>
+                  <p class="card-category">No New Notifications</p>
+                  <h3 class="card-title"> My Construction Status</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">
@@ -211,13 +197,13 @@ The above copyright notice and this permission notice shall be included in all c
 
 
             <div class="col-lg-6 col-md-6 col-sm-6">
-              <a href="/user/designdocuments">
+              <a href="/user/documents">
               <div class="card card-stats">
                 <div class="card-header card-header-danger card-header-icon">
                   <div class="card-icon">
                   <i class="fas fa-folder-open"></i>         
                   </div>
-                  <p class="card-category">New Feature!</p>
+                  <p class="card-category">No New Notifications</p>
                   <h3 class="card-title">My Design Documents</h3>
                 </div>
                 <div class="card-footer">
@@ -239,8 +225,8 @@ The above copyright notice and this permission notice shall be included in all c
                   <div class="card-icon">
                     <i class="fas fa-shopping-cart"></i>
                   </div>
-                  <p class="card-category">New Feature!</p>
-                  <h3 class="card-title">Payment</h3>
+                  <p class="card-category">No New Notifications</p>
+                  <h3 class="card-title">My Payment</h3>
                 </div>
                 <div class="card-footer">
                   <div class="stats">

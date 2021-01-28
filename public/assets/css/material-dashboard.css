@@ -17698,6 +17698,23 @@ html[dir="rtl"] .form-check .form-check-sign .check:before {
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
 }
 
+.card {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.card {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+.card {
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+}
+
+/* .card :hover{
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.14);
+
+} */
+
 .card .table tr:first-child td {
   border-top: none;
 }

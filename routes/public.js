@@ -3,8 +3,12 @@ var router = express.Router();
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
-
-  res.render('public/index',{district:true});  
+  let user=req.session.user
+  if(user){
+    res.redirect('user/dashboard')
+  }else{
+    res.render('public/index');  
+  }
 });
 
 // router.post('/registerform',(req,res)=>{

@@ -1,31 +1,8 @@
 var express = require('express');
 const user_helper = require('../helpers/user-helper');
+const { route } = require('./public');
 var router = express.Router();
 
-
-/* GET users listing. */
-
-router.get('/', function(req, res, next) {
-
-  res.render('user/login')
-});
-
-
-
-// router.post('/registerform',(req,res)=>{
-//   console.log(req.body)
-//   admin_helper.doLogin(req.body).then((response)=>{
-    
-//     if(response.status){
-//       req.session.admin=true
-//       req.session.admin=response.admin
-//       res.redirect('/admin/login')
-//     }else{
-//       req.session.adminLoginErr=true
-//       res.redirect('/admin')
-//     }    
-//   })
-// })
 
 router.post('/registerform',(req,res)=>{
   console.log(req.body)
@@ -36,65 +13,97 @@ router.post('/registerform',(req,res)=>{
 })
 
 
+router.get('/', function(req, res, next) {
+  let user=req.session.user
+if(user){
+  res.redirect('user/dashboard')
+}else{
+  res.render('user/login')
+}
+});
+
+
+// router.get('/', function(req, res, next) {
+//   let user=req.session.user
+// if(user){
+//   res.redirect('user/dashboard')
+// }
+//   res.render('user/login')
+// });
+
+
+
+
 router.post('/login',(req,res)=>{
   console.log(req.body)
   user_helper.doLogin(req.body).then((response)=>{
     
     if(response.status){
       req.session.user=true
+
+      req.session.loggedIn=true
       req.session.user=response.user
       res.redirect('/user/dashboard')
     }else{
       req.session.userLoginErr=true
-      res.redirect('/user')
+      res.redirect('/user') 
+
+      // res.redirect('/user', {loginErr})
+
     }    
   })
 })
 
 
+router.get('/logout', (req,res)=>{
+  req.session.destroy()
+  res.redirect('/')
+})
 
 
 router.get('/dashboard',(req,res)=>{
 
-  res.render('user/dashboard')
+  let user=req.session.user
+  console.log(user)
 
+  res.render('user/dashboard',{user})
 
-  // console.log(req.body)
-
-
-  // admin_helper.doLogin(req.body).then((response)=>{
-    
-  //   if(response.status){
-  //     req.session.admin=true
-  //     req.session.admin=response.admin
-  //     res.redirect('/admin/login')
-  //   }else{
-  //     req.session.adminLoginErr=true
-  //     res.redirect('/admin')
-  //   }    
-  // })
 })
 
 
-router.get('/mydesign', function(req, res, next) {
 
-  res.render('user/design_requirement')
+router.get('/mydesign', function(req, res, next) {
+  let user=req.session.user
+
+  res.render('user/design_requirement',{user})
 });
+
+
 
 router.get('/construction', function(req, res, next) {
 
-  res.render('user/construction')
+  let user=req.session.user
+  res.render('user/construction', {user})
 });
+
+
 
 router.get('/documents', function(req, res, next) {
 
-  res.render('user/documents')
+  let user=req.session.user
+  res.render('user/documents', {user})
 });
+
+
+
 
 router.get('/payment', function(req, res, next) {
 
-  res.render('user/payment')
+  let user=req.session.user
+  res.render('user/payment',{user})
 });
+
+
 
 
 

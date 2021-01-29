@@ -55,7 +55,7 @@
                                 </p>
                             </div>
                             <div class="card-body">
-                                <form id="form1" class="form-validate" action="/form" method="POST">
+                                <form id="form1" class="form-validate" action="/user/registerform" method="POST">
 
                                     <input type="text" value="Malappuram" name="district" hidden>
 
@@ -356,11 +356,11 @@
                                     <div class="form-row mt-2 ">
                                         <div class="form-group col-md-6 ">
                                             <label for="name">Name</label>
-                                            <input type="text" class="form-control" name="contactname" not>
+                                            <input type="text" class="form-control" name="contactname" >
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="phone number"> Phone Number</label>
-                                            <input type="text" class="form-control" name="contactphone" not>
+                                            <input type="text" class="form-control" name="contactphone" >
                                         </div>
                                     </div>
 
@@ -380,11 +380,11 @@
 
                                             <div class="form-group col-md-12 text-left">
                                                 <label for="address">Length (In meters)</label>
-                                                <input type="text" class="form-control" name="length" not>
+                                                <input type="text" class="form-control" name="length">
                                             </div>
                                             <div class="form-group col-md-12 text-left">
                                                 <label for="address"> Breadth (In meters)</label>
-                                                <input type="text" class="form-control" name="breadth" not>
+                                                <input type="text" class="form-control" name="breadth">
 
                                             </div>
                                             <p style="font-size: small; font-weight: 600; text-align: -webkit-left;">( For Plots with irregular
@@ -394,7 +394,7 @@
                                             <div class="form-group col-md-12 mt-3">
                                                 <label for="gender" class="text-left">Direction to which the Plot faces
                                                     the road</label>
-                                                <select id="direction" name="direction" not>
+                                                <select id="direction" name="direction">
                                                     <option value="">Select Direction</option>
                                                     <option value="North">North</option>
                                                     <option value="East">East</option>
@@ -512,7 +512,7 @@
                                                 </div>
 
                                                 <input type="text" class="form-control" placeholder="Username"
-                                                    aria-label="Username" aria-describedby="basic-addon1" name="username" id="username">
+                                                    aria-label="Username" aria-describedby="basic-addon1" name="Username" id="username" not>
                                             </div>
                                         </div>
                                       
@@ -521,8 +521,8 @@
 
 
                                                 <div class="input-group show-hide-password">
-                                                    <input class="form-control" name="password" id="password"
-                                                        placeholder="Enter password" type="password">
+                                                    <input class="form-control" name="Password" id="password"
+                                                        placeholder="Enter password" type="password" not>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><i class="icon-eye-off"
                                                                 aria-hidden="true" style="cursor: pointer;"></i></span>
@@ -537,12 +537,12 @@
                                     </div>
               
 
-                                    <div class="input-group date" id="datetimepicker12" data-target-input="nearest" style="display: none;">
+                                    <!-- <div class="input-group date" id="datetimepicker12" data-target-input="nearest" style="display: none;">
                                         <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker12" placeholder="Select date & time" name="datetime"/>
                                         <div class="input-group-append" data-target="#datetimepicker12" data-toggle="datetimepicker">
                                             <div class="input-group-text"><i class="icon-calendar"></i></div>
                                         </div>
-                                    </div>
+                                    </div> -->
 
 
 

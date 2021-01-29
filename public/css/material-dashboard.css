@@ -157,7 +157,7 @@ sup {
 }
 
 a {
-  color: #9c27b0;
+  color: #292929;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -578,7 +578,7 @@ sup {
 }
 
 a {
-  color: #9c27b0;
+  color: #333333;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -15460,8 +15460,8 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 }
 
 .sidebar[data-color="purple"] li.active>a {
-  background-color: #9c27b0;
-  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgba(156, 39, 176, 0.4);
+  background-color: #2b2b2b;
+  box-shadow: 0 4px 20px 0px rgba(0, 0, 0, 0.14), 0 7px 10px -5px rgb(14 14 14 / 40%);
 }
 
 .sidebar[data-color="azure"] li.active>a {

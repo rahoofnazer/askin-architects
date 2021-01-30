@@ -11,21 +11,13 @@ router.get('/', function(req, res, next) {
   }
 });
 
-// router.post('/registerform',(req,res)=>{
-//   console.log(req.body)
-//   res.render('public/Message')
-//   // admin_helper.doLogin(req.body).then((response)=>{
-    
-//   //   if(response.status){
-//   //     req.session.admin=true
-//   //     req.session.admin=response.admin
-//   //     res.redirect('/admin/login')
-//   //   }else{
-//   //     req.session.adminLoginErr=true
-//   //     res.redirect('/admin')
-//   //   }    
-//   // })
-// })
+
+router.get('/malappuram', (req,res)=>{
+  res.render('public/Malappuram')
+})
+
+
+
 
 
 

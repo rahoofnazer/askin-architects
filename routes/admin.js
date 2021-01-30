@@ -16,18 +16,14 @@ const verifyAdmin=(req,res,next)=>{
 
 
 router.get('/', function(req, res, next) {
-  res.render('admin/admin-login', { title: 'sdfdf' });
+
+  res.render('admin/admin-login',{"loginErr":req.session.adminLoginErr})
+  req.session.adminLoginErr=false
+
 });
 
-// router.post('/login',(req,res)=>{
-// admin_helper.doSignup(req.body).then((response)=>{
-//   console.log(response)
-//   res.redirect('/admin/viewProducts')
-//   })
-// })
 
-
-router.get('/login',verifyAdmin,(req,res)=>{
+router.get('/dashboard',verifyAdmin,(req,res)=>{
   if(req.session.admin){
     res.render('admin/admin-dashboard')
   }else{
@@ -43,7 +39,7 @@ router.post('/login',(req,res)=>{
     if(response.status){
       req.session.admin=true
       req.session.admin=response.admin
-      res.redirect('/admin/login')
+      res.redirect('/admin/dashboard')
     }else{
       req.session.adminLoginErr=true
       res.redirect('/admin')
@@ -51,10 +47,21 @@ router.post('/login',(req,res)=>{
   })
 })
 
-router.post('/add-doctor',(req,res)=>{
-  console.log('line 53++++++++++',req.body)
 
+router.get('/users',(req,res)=>{
+
+  res.render('admin/users')
 })
+
+// router.post('/login',(req,res)=>{
+// admin_helper.doSignup(req.body).then((response)=>{
+//   console.log(response)
+//   res.redirect('/admin/viewProducts')
+//   })
+// })
+
+
+
 
 router.get('/logout',verifyAdmin,(req,res)=>{
 

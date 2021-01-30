@@ -1,19 +1,78 @@
-<div class="container  px-5" style="margin-left: 200px; padding-left: 20rem; padding-right: 10rem; "> 
-    <div class="col-lg-6">
-    <img src="/images/adminclinic.jpg" style="height: auto; width: 500px;">
-    </div>
+<!DOCTYPE html>
+<html lang="en">
 
-<div class="">
-<form style="margin-right: 300px;" action="/admin/login" method="POST">
-  <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label"> Admin Username</label>
-    <input type="text" class="form-control" id="Username" name="Username">
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Password</label>
-    <input type="password" class="form-control" id="Password" name="Password">
-  </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
-</form>
-</div>
-</div>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />    <meta name="author" content="INSPIRO" />    
+	<meta name="description" content="Themeforest Template Polo, html template">
+    <link rel="icon" type="image/png" href="images/favicon.png">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>POLO | The Multi-Purpose HTML5 Template</title>
+    <!-- Stylesheets & Fonts -->
+    <link href="../css/plugins.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Body Inner -->
+    <div class="body-inner">
+        <!-- Section -->
+        <section class="fullscreen" data-bg-parallax="img/form-background.jpg">
+            <div class="container">
+                <div>
+                    {{!-- <div class="text-center m-b-30">
+                        <a href="/" class="logo">
+                            <img src="img/askin-logo.png" alt="askin architects" style="width: auto; height: 60px;">
+                            <span class="h1 text-light" style="vertical-align: -webkit-baseline-middle; padding-top: -24rem; padding-bottom: -9rem; font-size: 4.4rem; font-weight: 700;"></span>
+                        </a>
+                    </div> --}}
+
+
+
+                    <div class="row">
+                        <div class="col-lg-5 center p-50 background-white b-r-6">
+                          {{#if loginErr}}
+                    <span class="badge badge-s badge-danger"><i class="fa fa-warning"></i> &nbsp; Invalid username or password</span>
+                         {{/if}}
+                            <h3><i class="fas fa-user-cog"></i> Askin admin login</h3>
+                            <form id="form2" method="POST" action="/admin/login">
+                                <div class="form-group">
+                                    <label class="sr-only">Username</label>
+                                    <input type="text" class="form-control" placeholder="Username" name="Username" id="Username">
+                                </div>
+                                <div class="form-group m-b-5">
+                                    <label class="sr-only">Password</label>
+                                    <input type="password" class="form-control" placeholder="Password" id="Password" name="Password">
+                                </div>
+                                <div class="form-group form-inline text-left">
+                                    {{!-- <div class="form-check">
+                                        <label>
+                                            <input type="checkbox"><small class="m-l-10"> Remember me</small>
+                                        </label>
+                                    </div> --}}
+                                </div>
+                                <div class="text-left form-group">
+                                    
+                                    <button type="submit" class="btn">Login</button>
+                                </div>
+                            </form>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- end: Section -->
+    </div>
+    <!-- end: Body Inner -->
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Plugins-->
+    <script src="js/jquery.js"></script>
+    <script src="js/plugins.js"></script>
+    <!--Template functions-->
+    <script src="js/functions.js"></script>
+</body>
+
+</html>

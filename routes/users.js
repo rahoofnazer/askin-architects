@@ -8,9 +8,17 @@ router.post('/registerform',(req,res)=>{
   console.log(req.body)
   user_helper.doSignup(req.body).then((response)=>{
   console.log(response)
-  res.render('public/Message')
+  res.redirect('/user/message')
   })
 })
+
+router.get('/message',(req,res)=>{
+  let user=req.session.user
+  console.log("22 th line public js")
+  console.log(user)
+  res.render('public/Message',{user})
+})
+
 
 
 router.get('/', function(req, res, next) {
@@ -18,7 +26,9 @@ router.get('/', function(req, res, next) {
 if(user){
   res.redirect('user/dashboard')
 }else{
-  res.render('user/login')
+  res.render('user/login',{"loginErr":req.session.userLoginErr})
+  req.session.userLoginErr=false
+
 }
 });
 
@@ -102,7 +112,6 @@ router.get('/payment', function(req, res, next) {
   let user=req.session.user
   res.render('user/payment',{user})
 });
-
 
 
 

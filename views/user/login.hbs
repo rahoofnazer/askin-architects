@@ -28,13 +28,14 @@
                         </a>
                     </div>
 
-                    {{#if loginErr}}
-                    <p class="error text-light"> Invalid username or password</p>
-                         {{/if}}
+                    
 
 
                     <div class="row">
                         <div class="col-lg-5 center p-50 background-white b-r-6">
+                            {{#if loginErr}}
+                    <span class="badge badge-s badge-danger"><i class="fa fa-warning"></i> &nbsp; Invalid username or password</span>
+                         {{/if}}
                             <h3>Login to your Account</h3>
                             <form id="form2" method="POST" action="/user/login">
                                 <div class="form-group">

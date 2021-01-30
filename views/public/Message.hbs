@@ -16,19 +16,75 @@
 
 <body>
     <!-- Body Inner -->
+    <header id="header" class="header-modern header-min  dark">
+            <div class="header-inner" style="opacity: 90%;">
+                <div class="container">
+                    <!--Logo-->
+                    <div id="logo" style="text-align: left;">
+                        <a href="/">
+					
+							<img src="/img/askin-logo.png" class="logo-dark p-5" 
+							
+							style="height: auto !important;
+							margin: 8px;
+							width: 55px !important;
+							margin-top: 1rem !important;">
+                        </a>
+					</div>
+					
+        
+ 
+                    <!--Navigation Resposnive Trigger-->
+                    <div id="mainMenu-trigger">
+                        <a class="lines-button x"><span class="lines"></span></a>
+                    </div>
+         
+                    
+                    <div id="mainMenu">
+                        <div class="container">
+                            <nav>
+                                <ul>
+                                    <li><a href="/">Home</a></li>
+                                    <li><a href="/#design">Design</a>
+                                      
+                                    </li>
+
+                                    <li class="dropdown mega-menu-item"><a href="http://keralaarchitect.blogspot.com" target="_blank"> Blog</a>
+                                        
+									</li>
+									<li class="dropdown mega-menu-item"><a href="about">About</a>
+                                        
+                                    </li>
+                                    <li class="dropdown"><a href="contact">Contact</a>
+                                        
+                                    </li>
+									<li>
+										<a href="/user">
+							<button type="button" class="btn btn-xs btn-icon-holder btn-shadow btn-light btn-outline btn-rounded">Login<i class="fa fa-user"></i></button>
+										</a>
+							</li>	
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    <!--end: Navigation-->
+                </div>
+            </div>
+        </header>
     <div class="body-inner">
    
-       
-        <section class="background-grey" style="padding: 0%;">
+               <section id="page-title" class="dark" style="background: url(/img/pattern10.png)">
             <div class="container">
-                <div class="heading-text heading-section text-center">
-                    <h2 data-animate="fadeInUp" data-animate-delay="600" class="animated fadeInUp visible" style="opacity: 1; animation-duration: 600ms;">Thank You!</h1>
 
-                    <span class="" style="opacity: 1; animation-duration: 600ms;" data-animate="fadeInUp" data-animate-delay="600" class="lead animated fadeInUp visible">We have received your site details, design requirements
-                        for your proposed residence and your account has been registered successfully. 
+                <div class="page-title">
+                    <div class="heading-text text-center">
+                    <h2 data-animate="fadeInUp" data-animate-delay="3000" class="animated fadeInUp visible" style="opacity: 1; animation-duration: 1000ms; color: black;">Thank You {{user.name}}!</h1>
+                    <div class="line" style="margin-top: 25px; margin-bottom: 25px;"></div>
+                    <span class="" style="opacity: 1; animation-duration: 1500ms; color: rgb(26, 26, 26); font-size: 1.14rem;" data-animate="fadeInUp" data-animate-delay="1000" class="lead animated fadeInUp visible">We have received your site details, design requirements
+                        for your proposed residence & your account has been registered successfully. 
                         <br>
                         <br>
-                        Please <a class="btn btn-xs btn-square btn-dark btn-outline" href="/user" target="_blank" >Login </a> to your Dashboard.</span>
+                         <a class="btn btn-square btn-dark btn-outline" href="/user" >Login to Dashboard</a></span>                    </div>
                 </div>
             </div>
         </section>

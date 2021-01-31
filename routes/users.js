@@ -5,7 +5,11 @@ var router = express.Router();
 
 
 router.post('/registerform',(req,res)=>{
+
+  req.body.dateTime = new Date();
   console.log(req.body)
+  // console.log(new Date())
+  // req.body.
   user_helper.doSignup(req.body).then((response)=>{
   console.log(response)
   res.redirect('/user/message')

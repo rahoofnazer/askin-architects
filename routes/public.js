@@ -11,6 +11,9 @@ router.get('/', function(req, res, next) {
   }
 });
 
+router.get('/home', (req,res)=>{
+  res.render('public/index')
+})
 
 router.get('/malappuram', (req,res)=>{
   res.render('public/Malappuram')

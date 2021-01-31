@@ -28,6 +28,7 @@ The above copyright notice and this permission notice shall be included in all c
   <link href="../assets/css/material-dashboard.css?v=2.1.2" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 </head>
 
 <body class="">
@@ -38,7 +39,7 @@ The above copyright notice and this permission notice shall be included in all c
 
         Tip 2: you can also add an image using data-image tag
     -->
-      <div class="logo"><a href="/" class="simple-text logo-normal">
+      <div class="logo"><a href="/home" class="simple-text logo-normal">
         Askin Architects
         </a></div>
       <div class="sidebar-wrapper">
@@ -177,21 +178,191 @@ The above copyright notice and this permission notice shall be included in all c
               <div class="row">
                 <div class="col-md-12">
                   {{!-- <h4 class="card-title">Notifications Style</h4> --}}
-                  <div class="alert alert-plain">
+                  <div class="alert alert-plain mb-5">
                     <span> Select a plan to get your house deigned by us!</span>
                       
                       Feel free to<a class="" style=" font-weight:500; rgb(0, 0, 0);" href="https://"> contact us</a> for more details. 
                   </div>
                   
+
+                  <div class="pricing-table">
+
+                   <div class="col-lg-6 col-md-6 col-12 mx-auto" style="padding-left: 0%; padding-right: 0%;">
+                        <div class="plan featured">
+                            <div class="plan-header">
+                                <h4 style="font-size: 2.4rem;" class="mb-2">Stage I</h4>
+                                <div class="plan-price"><sup>₹</sup>4997 </div>
+                                {{!-- <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to Cart</a> --}}
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li><i class="fas fa-globe-americas"></i>Preliminary Floor plans within 7 days of payment</li>
+                                    <li><i class="fa fa-thumbs-up"></i>Up to three floor plan revisions.</li>
+                                    <li><i class="fa fa-signal"></i>Site Plan</li>
+                                    <li><i class="fa fa-rocket"></i>Area Calculations</li>
+                                    <li><i class="fa fa-server"></i>Joinery Schedule</li>
+                                    <li><i class="fa fa-server"></i>Drawing In AutoCAD & PDF Formats</li>
+                                    
+                                    <div class="mx-auto py-3" style="text-align: center;">
+                                <button class="btn btn-dark mx-auto">PAY NOW</button>
+                                </div>
+                                </ul>
+                                          
+                            </div>
+                        </div>
+                   </div>
+
+
+                   <div class="col-lg-6 col-md-6 col-12 mx-auto" style="padding-left: 0%; padding-right: 0%;">
+                        <div class="plan featured">
+                            <div class="plan-header">
+                                <h4 style="font-size: 2.4rem;" class="mb-2">Stage II</h4>
+                                <p class="text-muted">Available Only After Stage I</p>
+
+                                <div class="plan-price"><sup>₹</sup>9980 </div>
+                                {{!-- <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to Cart</a> --}}
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li><i class="fas fa-globe-americas"></i>Roof plan within 7 days of payment</li>
+                                    <li><i class="fa fa-thumbs-up"></i>Front Elevation</li>
+                                    <li><i class="fa fa-signal"></i>Side Elevation</li>
+                                    <li><i class="fa fa-rocket"></i>Up to three elevation revisions</li>
+                                    <li><i class="fa fa-server"></i>3D Perspective view</li>
+                                    <li><i class="fa fa-server"></i>Drawing In AutoCAD & PDF Formats</li>
+
+
+                                   {{#if planIpurchased}} 
+                                    <div class="mx-auto py-3" style="text-align: center;">
+                                <button class="btn btn-dark mx-auto">PAY NOW</button>
+                                </div>
+                                {{/if}}
+                                </ul>
+                                          
+                            </div>
+                        </div>
+                   </div>
+
+<div class="row"> 
+                   <div class="col-lg-6 col-md-6 col-12 mx-auto" style="padding-left: 0%; padding-right: 0%;">
+                        <div class="plan featured" style="height: 28rem;">
+                            <div class="plan-header">
+                                <h4 style="font-size: 2.4rem;" class="mb-2">Professional Plan</h4>
+                                <p class="text-muted">Available Only After Stage I & Stage II</p>
+
+                                <div class="plan-price"  style="font-size: 61px;"><sup>₹</sup>10,000 </div>
+                                {{!-- <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to Cart</a> --}}
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li><h5 style="font-weight: 300;"><i class="fa fa-rocket"></i>Exterior animated walkthrough</h5></li>
+                                 
+
+                                   {{#if planIplanIIpurchased}} 
+                                    <div class="mx-auto py-3" style="text-align: center;">
+                                <button class="btn btn-dark mx-auto">PAY NOW</button>
+                                </div>
+                                {{/if}}
+                                </ul>
+                                          
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="col-lg-6 col-md-6 col-12 mx-auto" style="padding-left: 0%; padding-right: 0%;">
+                        <div class="plan featured" style="height: 28rem;">
+                            <div class="plan-header">
+                                <h4 style="font-size: 2.4rem;" class="mb-2">Ultimate Plan</h4>
+                                <p class="text-muted">Available Only After Stage I & Stage II</p>
+
+                                <div class="plan-price" style="font-size: 61px;"><sup>₹</sup>25,000 </div>
+                                {{!-- <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to Cart</a> --}}
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li><h5 style="font-weight: 300;"><i class="fa fa-globe"></i>Interior animated walkthrough</h5></li>
+                                    <li><h5 style="font-weight: 300;"><i class="fa fa-rocket"></i>Exterior animated walkthrough</h5></li>
+
+
+                                   {{#if planIplanIIpurchased}} 
+                                    <div class="mx-auto py-3" style="text-align: center;">
+                                <button class="btn btn-dark mx-auto">PAY NOW</button>
+                                </div>
+                                {{/if}}
+                                </ul>
+                                          
+                            </div>
+                        </div>
+                   </div>
+
+
+
+                   <div class="col-lg-6 col-md-6 col-12 mx-auto" style="padding-left: 0%; padding-right: 0%;">
+                        <div class="plan featured" style="height: 28rem;">
+                            <div class="plan-header">
+                                <h4 style="font-size: 2.4rem;" class="mb-2">Interior Design</h4>
+                                <p class="text-muted">Available Only After Stage I & Stage II</p>
+
+                                <div class="plan-price"><sup>₹</sup>2000<span>per room/station</span> </div>
+                                {{!-- <a class="btn" href="#"><i class="icon-shopping-cart"></i> Add to Cart</a> --}}
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li><h5 style="font-weight: 300;"><i class="fa fa-globe"></i>Elevations of 4 sides</h5></li>
+                                    <li><h5 style="font-weight: 300;"><i class="fa fa-globe"></i>Flooring and Ceiling pattern</h5></li>
+                                 
+
+                                   {{#if planIplanIIpurchased}} 
+                                    <div class="mx-auto py-3" style="text-align: center;">
+                                <button class="btn btn-dark mx-auto">PAY NOW</button>
+                                </div>
+                                {{/if}}
+                                </ul>
+                                          
+                            </div>
+                        </div>
+                   </div>
+
+                   <div class="col-lg-6 col-md-6 col-12 mx-auto" style="padding-left: 0%; padding-right: 0%;">
+                        <div class="plan featured" style="height: 28rem;">
+                            <div class="plan-header">
+                                <h4 style="font-size: 2.4rem;" class="mb-2">Interior Design</h4>
+                                <p class="text-muted">Available Only After Stage I & Stage II</p>
+
+                                <div class="plan-price"><sup>₹</sup>3000<span>per room/station</span> </div>
+                            </div>
+                            <div class="plan-list">
+                                <ul>
+                                    <li><h5 style="font-weight: 300;"><i class="fa fa-globe"></i>Interior 3D Perspective View</h5></li>
+
+
+                                   {{#if planIplanIIpurchased}} 
+                                    <div class="mx-auto py-3" style="text-align: center;">
+                                <button class="btn btn-dark mx-auto">PAY NOW</button>
+                                </div>
+                                {{/if}}
+                                </ul>
+                                          
+                            </div>
+                        </div>
+                   </div>
+
+
+                   
+                            
+</div>
+
+                            
+
+
+
+                        </div>
+                    </div>
+                  </div>
+
               </div>
             </div>
 
-
-            
-              </div>
-            </div>
-          </div>
-        </div>
 
 
 
@@ -496,7 +667,7 @@ s0.parentNode.insertBefore(s1,s0);
 
 
 <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 
 </html>

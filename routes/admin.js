@@ -50,8 +50,20 @@ router.post('/login',(req,res)=>{
 
 router.get('/users',(req,res)=>{
 
-  res.render('admin/users')
+  admin_helper.getAllUsers().then((users)=>{
+
+    res.render('admin/users',{users})
+  })
+
 })
+
+
+
+// productHelpers.getAllProducts().then((products)=>{
+
+//   res.render('user/view-products',{products,user,cartCount});
+
+// })
 
 // router.post('/login',(req,res)=>{
 // admin_helper.doSignup(req.body).then((response)=>{
@@ -66,7 +78,7 @@ router.get('/users',(req,res)=>{
 router.get('/logout',verifyAdmin,(req,res)=>{
 
   req.session.admin=null 
-  res.redirect('/admin') 
+  res.redirect('/') 
 })
 
 module.exports = router;

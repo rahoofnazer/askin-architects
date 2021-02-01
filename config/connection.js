@@ -4,7 +4,7 @@ const state={
 }
 
 module.exports.connect=function(done){
-    const url='mongodb+srv://cluster0.n7l1e.mongodb.net/askin" --username askin'
+    const url='mongodb+srv://askin:admin@askin@cluster0.n7l1e.mongodb.net/askin?retryWrites=true&w=majority' 
     const dbname='askin'
 
     mongoClient.connect(url,(err,data)=>{

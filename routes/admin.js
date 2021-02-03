@@ -59,6 +59,12 @@ router.get('/users',(req,res)=>{
 
 
 
+router.get('/documents',(req,res)=>{
+
+ 
+  res.render('admin/design_documents')
+})
+
 // productHelpers.getAllProducts().then((products)=>{
 
 //   res.render('user/view-products',{products,user,cartCount});

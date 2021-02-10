@@ -105,8 +105,14 @@
             <div class="">
 
                 <div class="page-title ">
-                    <h1 style="font-weight: 600;">Get Your House Designed In Malappuram District.</h1>
-                    <span class="lead">Please fill up the fields below to get your house designed by us.</span>
+                    <h1 style="font-weight: 600;">Get Your House Designed In {{district}} District.</h1>
+                    <div class="col-md-8 mx-auto">
+                        <span class="lead ">Please fill up the fields below to get your house designed by us and rest assured that we will not share your details to a third party 
+                                without your consent.</span>
+                    </div>
+                    
+                    {{!-- <p class="text-muted">Please rest assured that we will not share your details to a third party 
+                                without your consent. </p> --}}
                 </div>
             </div>
         </section>
@@ -119,13 +125,14 @@
                         <div class="card">
                             {{!-- <div class="card-header">
                                 <span class="h3" style=";">Get Your House Designed In Malappuram District.</span>
-                                <p class="text-muted">Please fill up the fields below to get your house designed by us.
-                                </p>
+                                
                             </div> --}}
+                            <p class="text-muted container my-3 "></p>
+                            
                             <div class="card-body">
                                 <form id="form1" class="form-validate" action="/user/registerform" method="POST">
 
-                                    <input type="text" value="Malappuram" name="district" hidden>
+                                    <input type="text" value="{{district}}" name="district" hidden>
 
 
                                     <div class="form-row">
@@ -407,7 +414,7 @@
 
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
-                                            <label for="address">Location of Your Residence In Malappuram District</label>
+                                            <label for="address">Location of Your Residence In {{district}} District</label>
                                             <input type="text" class="form-control" name="location" not>
 
                                         </div>
@@ -613,9 +620,9 @@
                                     </div>  --}}
 
 
+                                            <label class="my-4">By clicking on Submit, you acknowledge that you accept our <a href="">Privacy Policy,</a> <a href="#">Terms and Conditions</a>.</label> <br>
 
-
-                                    <button type="submit" class="btn btn-dark btn-outline m-t-30 mt-3">Get My House Designed</button>
+                                    <button type="submit" class="btn btn-dark">Submit</button>
                                 </form>
                             </div>
                         </div>

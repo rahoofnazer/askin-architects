@@ -31,6 +31,12 @@ router.get('/dashboard',verifyAdmin,(req,res)=>{
     req.session.adminLoginErr=false
 })
 
+// router.post('/Login',(req,res)=>{
+// admin_helper.doSignup(req.body).then((response)=>{
+//   console.log(response)
+//   res.redirect('/admin/viewProducts')
+//   })
+// })
 
 router.post('/login',(req,res)=>{
   console.log(req.body)
@@ -53,6 +59,15 @@ router.get('/users',(req,res)=>{
   admin_helper.getAllUsers().then((users)=>{
 
     res.render('admin/users',{users})
+  })
+
+})
+
+router.get('/paidUsers',(req,res)=>{
+
+  admin_helper.getAllUsers().then((users)=>{
+
+    res.render('admin/paid-users',{users})
   })
 
 })
@@ -88,3 +103,6 @@ router.get('/logout',verifyAdmin,(req,res)=>{
 })
 
 module.exports = router;
+
+
+

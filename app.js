@@ -4,6 +4,8 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
+const paypal = require('paypal-rest-sdk');
+
 
 var adminRouter = require('./routes/admin');
 var publicRouter = require('./routes/public');
@@ -29,6 +31,13 @@ app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
 app.engine('hbs',hbs({extname:'hbs',defaultLayout:'layout',layoutsDir:__dirname+'/views/layout/',partialsDir:__dirname+'/views/partials/'}))
 
+paypal.configure({
+  mode: "live", //sandbox or live
+  client_id:
+    "AYfclZ_ugGdJLr8_A5rXeHxessp76wsx9moeH6ZWIBFL1IRtK00XO-uHXkD5NLrrcJFJkVjf32HgJf4j",
+  client_secret:
+    "ELykzJ0x705Hj8-PUIFgWvaoMn537rqLBhb2s-6shFvWXVjSWDL_38ui_GNJWXJUjElR-YQNaFWgG5Hk",
+});
 
 db.connect((err)=>{
   if(err)

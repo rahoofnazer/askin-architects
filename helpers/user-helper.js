@@ -10,7 +10,7 @@ const session = require('express-session');
 
 module.exports={
     doSignup: (userData) =>{
-        console.log(userData)
+        // console.log(userData)
         return  new Promise(async(resolve,reject)=>{
     
             userData.Password=await bcrypt.hash(userData.Password, 10)
@@ -47,37 +47,55 @@ module.exports={
                     resolve({status:false})
                 }
             })
+        },
+
+        UpdateDataStageOne: (user)=>{
+            let response = {}
+            console.log("53 rd line")
+            console.log(user)
+            return new Promise((resolve,reject)=>{
+                db.get().collection(collection.USER_COLLECTION)
+                .updateOne({_id:objectId(user._id)},{
+                    $set:{
+
+                        StageOnePaidStatus:user.StageOnePaidStatus,
+                        StageOnePaidDate:user.StageOnePaidDate,
+                        StageOnePaidFirstName:user.StageOnePaidFirstName,
+                        StageOnePaidLastName:user.StageOnePaidLastName,
+                        StageOnePaidEmail:user.StageOnePaidEmail,
+                        StageOnePaidCurrency:user.StageOnePaidCurrency,
+                        StageOnePaidAmount:user.StageOnePaidAmount
+
+                    }
+                }).then((response)=>{
+                    resolve()
+                })
+                
+            })
+        },
+        UpdateDataStageTwo: (user)=>{
+            let response = {}
+            console.log("53 rd line")
+            console.log(user)
+            return new Promise((resolve,reject)=>{
+                db.get().collection(collection.USER_COLLECTION)
+                .updateOne({_id:objectId(user._id)},{
+                    $set:{
+
+                        StageTwoPaidStatus:user.StageTwoPaidStatus,
+                        StageTwoPaidDate:user.StageTwoPaidDate,
+                        StageTwoPaidFirstName:user.StageTwoPaidFirstName,
+                        StageTwoPaidLastName:user.StageTwoPaidLastName,
+                        StageTwoPaidEmail:user.StageTwoPaidEmail,
+                        StageTwoPaidCurrency:user.StageTwoPaidCurrency,
+                        StageTwoPaidAmount:user.StageTwoPaidAmount
+
+                    }
+                }).then((response)=>{
+                    resolve()
+                })
+                
+            })
         }
-
-
-
-
-    // ,
-    // doLogin: (adminData)=>{
-    //     return new Promise( async(resolve,reject)=>{
-    //         let loginStatus=false
-    //         let response={}
-    
-    
-    //         let admin= await db.get().collection(collection.ADMIN_COLLECTION).findOne({Username:adminData.Username})
-    //         if(admin){
-    //             bcrypt.compare(adminData.Password,admin.Password).then((status)=>{
-    //                 if(status){
-    //                     console.log('Admin Login Success')
-    //                     response.admin=admin
-    //                     response.status=true   
-    //                     resolve(response) 
-    //                 }else{
-    //                     console.log('Admin pwd not match, login failed')
-    //                     resolve({status:false})
-    //                 }
-    //             })
-    
-    //         }else{
-    //             console.log('admin username not found, login failed    ');
-    //             resolve({status:false})
-    //         }
-    //     })
-    // }
     
 }

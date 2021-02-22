@@ -38,57 +38,59 @@
 
 <body>
 
-    <header id="header" class="header-modern  dark">
+    <header id="header" class="header-modern header-mini   dark">
             <div class="header-inner" style="opacity: 90%;">
                 <div class="container">
                     <!--Logo-->
                     <div id="logo" style="text-align: left;">
                         <a href="/">
-							<img src="img/askin-logo.png" class="logo-default" 
-							
-							style="height: auto;
+                            <img src="img/askin-logo.png" class="logo-default" style="height: auto;
 							width: 55px;
-							margin-top: 1rem;"> 
-							<img src="img/askin-logo.png" class="logo-dark p-5" 
-							
-							style="height: auto !important;
+							margin-top: 1rem;">
+                            <img src="img/askin-logo.png" class="logo-dark p-5" style="height: auto !important;
 							margin: 8px;
 							width: 55px !important;
 							margin-top: 1rem !important;">
                         </a>
-					</div>
-					
-        
- 
+                    </div>
+
+
+
                     <!--Navigation Resposnive Trigger-->
                     <div id="mainMenu-trigger">
                         <a class="lines-button x"><span class="lines"></span></a>
                     </div>
-         
-                    
+
+
                     <div id="mainMenu">
                         <div class="container">
                             <nav>
                                 <ul>
                                     <li><a href="/">Home</a></li>
+
                                     <li><a href="/#design">Design</a>
-                                      
                                     </li>
 
-                                    <li class="dropdown mega-menu-item"><a href="http://keralaarchitect.blogspot.com" target="_blank"> Blog</a>
-                                        
-									</li>
-									<li class="dropdown mega-menu-item"><a href="about">About</a>
-                                        
+                                    <li><a href="/media">Media</a>
+
                                     </li>
-                                    <li class="dropdown"><a href="contact">Contact</a>
-                                        
+
+                                    <li><a href="https://askinarchitects.blogspot.com/" target="_blank"> Blog</a>
+
                                     </li>
-									<li>
-										<a href="/user">
-							<button type="button" class="btn btn-xs btn-icon-holder btn-shadow btn-light btn-outline btn-rounded">Login<i class="fa fa-user"></i></button>
-										</a>
-							</li>	
+                                    <li><a href="/about">About</a>
+
+                                    </li>
+                                    <li><a href="/contact">Contact</a>
+
+                                    </li>
+                                    <li>
+                                        <a href="/user">
+                                            <button type="button"
+                                                class="btn btn-xs btn-icon-holder btn-shadow btn-light btn-outline btn-rounded">Login<i
+                                                    class="fa fa-user"></i></button>
+                                        </a>
+                                    </li>
                                 </ul>
                             </nav>
                         </div>
@@ -138,23 +140,23 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="name">Name</label>
-                                            <input type="text" class="form-control" name="name" not>
+                                            <input type="text" class="form-control" name="name" required>
                                         </div>
                                         <div class="form-group col-md-6">
                                             <label for="email">Email address</label>
-                                            <input type="email" class="form-control" name="email" not>
+                                            <input type="email" class="form-control" name="email" required>
                                         </div>
                                     </div>
 
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="telephone">Telephone</label>
-                                            <input class="form-control" type="tel" name="telephone" not>
+                                            <input class="form-control" type="tel" name="telephone" required>
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="gender">Present Country of Residence</label>
-                                            <select id="country" name="country" not>
+                                            <select id="country" name="country" required>
                                                 <option value="">Select your country</option>
                                                 <option value="India">India</option>
                                                 <!-- <option value="">----------</option> -->
@@ -415,13 +417,13 @@
                                     <div class="form-row">
                                         <div class="form-group col-md-6">
                                             <label for="address">Location of Your Residence In {{district}} District</label>
-                                            <input type="text" class="form-control" name="location" not>
+                                            <input type="text" class="form-control" name="location" required>
 
                                         </div>
 
                                         <div class="form-group col-md-6">
                                             <label for="address">Nearest city</label>
-                                            <input type="text" class="form-control" name="city" not>
+                                            <input type="text" class="form-control" name="city" required>
                                         </div>
                                     </div>
 
@@ -455,11 +457,11 @@
 
                                             <div class="form-group col-md-12 text-left">
                                                 <label for="address">Length (In meters)</label>
-                                                <input type="text" class="form-control" name="length">
+                                                <input type="number" class="form-control" name="length">
                                             </div>
                                             <div class="form-group col-md-12 text-left">
                                                 <label for="address"> Breadth (In meters)</label>
-                                                <input type="text" class="form-control" name="breadth">
+                                                <input type="number" class="form-control" name="breadth">
 
                                             </div>
                                             <p style="font-size: small; font-weight: 600; text-align: -webkit-left;">( For Plots with irregular
@@ -490,7 +492,7 @@
                                         <div class="form-group col-md-4">
                                             <label for="gender">No. of Bedrooms</label>
 
-                                            <select id="bedroom" name="bedroom" not>
+                                            <select id="bedroom" name="bedroom" required>
                                                 <option value="">Select</option>
                                                 <option value="One">One</option>
                                                 <option value="Two">Two</option>
@@ -510,7 +512,7 @@
                                         <div class="form-group col-md-4">
                                             <label for="gender">No. of Bathrooms</label>
 
-                                            <select id="bathroom" name="bathroom" not>
+                                            <select id="bathroom" name="bathroom" required>
                                                 <option value="">Select</option>
                                                 <option value="One">One</option>
                                                 <option value="Two">Two</option>
@@ -529,7 +531,7 @@
 
                                         <div class="form-group col-md-4">
                                             <label for="gender">Approximate Floor Area</label>
-                                            <select name="floorarea" id="floorarea" not>
+                                            <select name="floorarea" id="floorarea" required>
                                                 <option value="">Select</option>
                                                 <option value="0 - 500 sqft">0 - 500 sqft</option>
                                                 <option value="500 - 1000 sqft">500 - 1000 sqft</option>
@@ -575,8 +577,7 @@
 
                        
 
-                                    <div class="h4 mb-4" style="font-size: 1.327143em;">Register Your Account</div>
-
+                                            <div class="h5 mb-4 mt-3" style="font-weight: 600;">Your Preferred Username and Password</div>
                                     <div class="form-row">
 
                                         <div class="col-md-6">
@@ -587,7 +588,7 @@
                                                 </div>
 
                                                 <input type="text" class="form-control" placeholder="Username"
-                                                    aria-label="Username" aria-describedby="basic-addon1" name="Username" id="username" not>
+                                                    aria-label="Username" aria-describedby="basic-addon1" name="Username" id="username" required>
                                             </div>
                                         </div>
                                       
@@ -597,7 +598,7 @@
 
                                                 <div class="input-group show-hide-password">
                                                     <input class="form-control" name="Password" id="password"
-                                                        placeholder="Enter password" type="password" not>
+                                                        placeholder="Enter password" type="password" required>
                                                     <div class="input-group-append">
                                                         <span class="input-group-text"><i class="icon-eye-off"
                                                                 aria-hidden="true" style="cursor: pointer;"></i></span>
@@ -620,7 +621,7 @@
                                     </div>  --}}
 
 
-                                            <label class="my-4">By clicking on Submit, you acknowledge that you accept our <a href="">Privacy Policy,</a> <a href="#">Terms and Conditions</a>.</label> <br>
+                                            <label class="my-4">By clicking on Submit, you acknowledge that you accept our <a href="/privacypolicy">Privacy Policy,</a> <a href="/termsandconditions">Terms and Conditions</a>.</label> <br>
 
                                     <button type="submit" class="btn btn-dark">Submit</button>
                                 </form>
@@ -657,7 +658,10 @@
 
 									<p class="mb-5" style="font-weight:;">Crafting Connections &bull; Built With Trust. <br>
 
-									&copy; 2021 Askin Architects. All Rights Reserved.</p>
+									&copy;             <script>
+              document.write(new Date().getFullYear())
+            </script>
+             Askin Architects. All Rights Reserved.</p>
 							<a class="btn btn-light btn-outline btn-rounded" href="/#design">DESIGN MY HOME</a>
 							<a class="btn btn-light btn-outline btn-rounded" href="/user">LOGIN</a>								</div>
 							</div>
@@ -673,14 +677,14 @@
 											</div>
 											<h3 style="margin-bottom: 20px;">Contact Us</h3>
 											<p><strong>Phone :</strong>
-												<br> (123) 456-7890
-												<br> (987) 654-3210
+												<br> 
+                                    <a target="_blank" href="https://wa.me/+918089315301"><i class="fab fa-whatsapp"></i> &nbsp; +91 80893 15301 </a> 
 												<br>
 												<br>
 
 												<strong>Mail :</strong>
 												<br>
-													<a href="mailto:mail@askinarchitects.com"> mail@askinarchitects.com </a>
+													<a href="mailto:askinarchitects@gmail.com"> <i class="icon-mail"></i> &nbsp; askinarchitects@gmail.com </a>
 													
 												</p>
 
@@ -688,14 +692,20 @@
 
 											<h3><div class="social-icons social-icons-border social-icons-rounded ">
 												<p>
-										
-										<ul>
-											<li class="social-facebook text-center"><a href="#"><i class="fab fa-facebook-f"></i></a></li>
-											<li class="social-twitter text-center"><a href="#"><i class="fab fa-twitter"></i></a></li>
-											<li class="social-instagram text-center"><a href="#"><i class="fab fa-instagram"></i></a></li>
-											<li class="social-instagram text-center"><a href="#"><i class="fab fa-pinterest"></i></a></li>
 
-										</ul>
+                                <ul>
+                                    <li class="social-facebook text-center"><a target="_blank" href="http://facebook.com/askinarchitects"><i
+                                                class="fab fa-facebook-f"></i></a></li>
+                                    <li class="social-twitter text-center"><a target="_blank" href="https://twitter.com/askinarchitects"><i
+                                                class="fab fa-twitter"></i></a></li>
+                                    <li class="social-instagram text-center"><a target="_blank" href="https://www.instagram.com/askinarchitects"><i
+                                                class="fab fa-instagram"></i></a></li>
+                                    <li class="social-instagram text-center"><a target="_blank" href="https://www.pinterest.com/askinarchitects"><i
+                                                class="fab fa-pinterest"></i></a></li>
+                                    <li class="social-instagram text-center"><a href="https://www.youtube.com/channel/UCvMicYAtTV0hN_0eSYN4NJg" target="_blank"><i
+                                                class="fab fa-youtube"></i></a></li>
+
+                                </ul>
 										</p>
 										</div>
 									</h3>
@@ -709,21 +719,21 @@
 
 
 									<div class="col-lg-5">
-									<form class="widget-contact-form" novalidate action="include/contact-form.php" role="form" method="post">
+									<form class="widget-contact-form" id="submit-form" action="" role="form" method="">
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
 												<span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
 											</div>
-											<input type="text" aria-required="true" name="widget-contact-form-name" class="form-control required name" placeholder="Enter your Name">
+											<input type="text" aria-required="true" name="name" class="form-control required name" placeholder="Enter your Name" required>
 										</div>
 										<div class="input-group mb-2">
 											<div class="input-group-prepend">
 												<span class="input-group-text" id="basic-addon1"><i class="fa fa-envelope"></i></span>
 											</div>
-											<input type="email" aria-required="true" required name="widget-contact-form-email" class="form-control required email" placeholder="Enter your Email">
+											<input type="email" aria-required="true" required name="email" class="form-control required email" placeholder="Enter your Email" required>
 										</div>
 										<div class="form-group mb-2">
-											<textarea type="text" name="widget-contact-form-message" rows="5" class="form-control" placeholder="Enter your Message"></textarea>
+											<textarea type="text" name="Message" rows="5" class="form-control" placeholder="Enter your Message" required></textarea>
 										</div>
 										<div class="form-group">
 											<button class="btn btn-light btn-outline" type="submit" id="form-submit"><i class="fa fa-paper-plane"></i>&nbsp;Send message</button>
@@ -740,7 +750,9 @@
 				</div>
 				<div class="copyright-content">
 					<div class="container">
-						<div class="copyright-text text-center" style="font-size: 12px;">&copy; 2021 Askin Architects. All Rights Reserved.</div>
+						<div class="copyright-text text-center" style="font-size: 12px;">&copy;             <script>
+              document.write(new Date().getFullYear())
+            </script> Askin Architects. All Rights Reserved.</div>
 					</div>
 				</div>
 			</footer>
@@ -848,5 +860,34 @@
 
    
 </body>
-
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+(function(){
+var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;
+s1.src='https://embed.tawk.to/6011688ea9a34e36b970eeae/1et200rll';
+s1.charset='UTF-8';
+s1.setAttribute('crossorigin','*');
+s0.parentNode.insertBefore(s1,s0);
+})();
+</script>
+<script>
+        $("#submit-form").submit((e)=>{
+            e.preventDefault()
+            $.ajax({
+                url:"https://script.google.com/macros/s/AKfycbzkhZsAPN2JjJM-XL-9bqLgyQkUTOfEa9cgHppXSQIPuFJmPzS7uP4n/exec",
+                data:$("#submit-form").serialize(),
+                method:"post",
+                success:function (response){
+                    alert("Thank you! We'll get back to you soon.")
+                    window.location.reload()
+                    //window.location.href="https://google.com"
+                },
+                error:function (err){
+                    alert("Something Error")
+    
+                }
+            })
+        })
+    </script>
 </html>

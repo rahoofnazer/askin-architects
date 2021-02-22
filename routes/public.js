@@ -85,6 +85,30 @@ router.get('/Thiruvananthapuram',(req,res)=>{
   res.render('public/Register',{district})
 })
 
+router.get('/privacypolicy',(req,res)=>{
+ 
+  res.render('public/privacypolicy')
+})
+
+router.get('/termsandconditions',(req,res)=>{
+ 
+  res.render('public/termsandconditions')
+})
+
+router.get('/about',(req,res)=>{
+ 
+  res.render('public/about')
+})
+
+router.get('/contact',(req,res)=>{
+ 
+  res.render('public/contact')
+})
+
+router.get('/media',(req,res)=>{
+ 
+  res.render('public/media')
+})
 
 
 

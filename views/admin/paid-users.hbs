@@ -1,0 +1,222 @@
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />    <meta name="author" content="INSPIRO" />    
+	<meta name="description" content="Themeforest Template Polo, html template">
+    <link rel="icon" type="image/png" href="images/favicon.png">   
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Document title -->
+    <title>POLO | The Multi-Purpose HTML5 Template</title>
+    <!-- DataTables css -->
+    <link href='../plugins/datatables/datatables.min.css' rel='stylesheet' />
+    <!-- Stylesheets & Fonts -->
+    <link href="../css/plugins.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Body Inner -->
+    <div class="body-inner">
+      
+         <section id="page-title" class="py-5" style="margin: 0%; padding: 0%;">
+            <div class="container">
+                <div class="page-title">
+                    <h1 style="font-weight: 600;"> <i class="fa fa-users"></i> Paid Users</h1>
+                </div>
+                
+            
+            </div>
+        </section>
+
+        <section id="page-content" class="no-sidebar">
+            <div class="">
+                <!-- DataTable -->
+                <div class="row mb-5">
+               
+                    <div class="col-lg-12 text-center">
+                  <a href="/admin/dashboard"><button type="button" class="btn btn-outline btn-dark btn-rounded mb-5">Back to admin dashboard</button></a>
+ <br>
+                            <span class="" style="font-weight: 600; ">Export as </span>
+                        <div id="export_buttons" class="mt-2"></div>
+                    </div>
+                </div>
+
+                {{!-- {{#each users}}
+                    name: {{this.name}}
+                {{/each}} --}}
+
+
+
+                <div class="row">
+                    <div class="col-lg-12">
+                        <table id="datatable" class="table table-bordered table-hover display nowrap responsive" style="width:100%">
+                            <thead>
+                                <tr>
+                                    
+                                    <th>Name & Username</th>
+                                    <th>I status</th>
+                                    <th>II status</th>
+
+                                                                        
+
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Country</th>
+                                    <th>Location</th>
+                                    <th>Contact Person</th>
+
+                                    <th>I Paid Date</th>
+                                    <th>I Paid Name</th>
+                                    <th>I PP Email</th>
+                                    <th>I Amount</th>
+
+                                    <th>II Paid Date</th>
+                                    <th>II Paid Name</th>
+                                    <th>II PP Email</th>
+                                    <th>II Amount</th>
+
+
+
+
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                {{#each users}}
+                                <tr>
+
+
+                                    <td>{{this.name}} <br> {{this.Username}}</td>
+                                    <td>{{this.StageOnePaidStatus}}</td>
+                                    <td>{{this.StageTwoPaidStatus}}</td>
+
+                                    <td><a href="mailto:{{this.email}}">{{this.email}} </a></td>
+                                    <td>{{this.telephone}}</td>
+                                    <td>{{this.country}}</td>
+                                    <td>{{this.district}} <br> {{this.city}} <br> {{this.location}}</td>
+                                    <td>{{this.contactname}} <br> {{this.contactphone}}</td>
+
+                                     <td>{{this.StageOnePaidDate}}</td>
+                                     <td>{{this.StageOnePaidFirstName}} {{this.StageOnePaidLastName}} </td>
+                                     <td>{{this.StageOnePaidEmail}}</td>
+                                     <td>{{this.StageOnePaidCurrency}} {{this.StageOnePaidAmount}}</td>
+
+                                     <td>{{this.StageTwoPaidDate}}</td>
+                                     <td>{{this.StageTwoPaidFirstName}} {{this.StageTwoPaidLastName}} </td>
+                                     <td>{{this.StageTwoPaidEmail}}</td>
+                                     <td>{{this.StageTwoPaidCurrency}} {{this.StageTwoPaidAmount}}</td>
+
+
+          
+
+{{!-- 
+
+                        StageTwoPaidStatus:user.StageTwoPaidStatus,
+                        StageTwoPaidDate:user.StageTwoPaidDate,
+                        StageTwoPaidFirstName:user.StageTwoPaidFirstName,
+                        StageTwoPaidLastName:user.StageTwoPaidLastName,
+                        StageTwoPaidEmail:user.StageTwoPaidEmail,
+                        StageTwoPaidCurrency:user.StageTwoPaidCurrency,
+                        StageTwoPaidAmount:user.StageTwoPaidAmount
+
+ --}}
+
+                                </tr>
+
+                                {{/each}}
+
+
+            
+                            </tbody>
+                           
+                        </table>
+                    </div>
+                </div>
+                <!-- end: DataTable -->
+            </div>
+        </section>
+       
+        <!-- end: Footer -->
+    </div> <!-- end: Body Inner -->
+    <!-- Scroll top -->
+    <a id="scrollTop"><i class="icon-chevron-up"></i><i class="icon-chevron-up"></i></a>
+    <!--Popover plugin files-->
+    <script src="../plugins/popper/popper.min.js"></script>
+
+    <!--Plugins-->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/plugins.js"></script>
+
+    <!--Template functions-->
+    <script src="../js/functions.js"></script>
+
+    <!--Datatables plugin files-->
+    <script src='../plugins/datatables/datatables.min.js'></script>
+
+
+    <script>
+        $(document).ready(function () {
+            var table = $('#datatable').DataTable({
+               
+               
+                responsive: true,
+                buttons: [{
+                    extend: 'print',
+                    title: 'Askin User Data',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'pdf',
+                    title: 'Askin User Data',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'excel',
+                    title: 'Askin User Data',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'csv',
+                    title: 'Askin User Data',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }, {
+                    extend: 'copy',
+                    title: 'Askin User Data',
+                    exportOptions: {
+                        columns: "thead th:not(.noExport)"
+                    }
+                }]
+            });
+            table.buttons().container().appendTo('#export_buttons');
+            $("#export_buttons .btn").removeClass('btn-secondary').addClass('btn-light');
+        });
+    </script>
+
+    {{!-- <script>
+        $(document).ready(function() {
+    $('#datatable').DataTable( {
+        "scrollX": true
+    } );
+} );
+    </script> --}}
+
+    <script type="text/javascript">
+        function zoom() {
+            document.body.style.zoom = "90%" 
+        }
+</script>
+
+<body onload="zoom()">
+</body>
+
+</html>

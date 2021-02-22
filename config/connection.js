@@ -1,13 +1,14 @@
 const mongoClient=require('mongodb').MongoClient
+
 const state={
     db:null
 }
 
 module.exports.connect=function(done){
-    // const url='mongodb+srv://askin:admin@askin@cluster0.n7l1e.mongodb.net/askin?retryWrites=true&w=majority'
-    // const url='mongodb+srv://cluster0.n7l1e.mongodb.net/askin" --username askin'
-    // mongo "mongodb+srv://cluster0.n7l1e.mongodb.net/<dbname>" --username askin
-    const url='mongodb://localhost:27017'
+
+    const url='mongodb://localhost:27017/askin'
+    // const url='mongodb://askinAdmin:admin%40$.890@localhost:27017/askin'
+
     const dbname='askin'
 
     mongoClient.connect(url,(err,data)=>{
@@ -21,3 +22,4 @@ module.exports.connect=function(done){
 module.exports.get=function(){
     return state.db
 }
+

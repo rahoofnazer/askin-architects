@@ -5,6 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const session = require('express-session');
 const paypal = require('paypal-rest-sdk');
+const nodemailer = require("nodemailer");
 
 
 var adminRouter = require('./routes/admin');

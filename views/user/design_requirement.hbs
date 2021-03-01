@@ -43,53 +43,44 @@ The above copyright notice and this permission notice shall be included in all c
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+
+          <li class="nav-item active  ">
             <a class="nav-link" href="/user/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
-          </li>                                                    
-                                                                          {{!-- tab here --}}
-          <li class="nav-item active">
+          </li>
+
+          {{!-- tab here --}}
+          <li class="nav-item ">
             <a class="nav-link" href="/user/mydesign">
-                    <i class="far fa-object-group"></i>
+              <i class="far fa-object-group"></i>
               <p>My Design Requirements</p>
             </a>
           </li>
 
           <li class="nav-item ">
-            <a class="nav-link" href="/user/construction">
-<i class="fas fa-hard-hat"></i>
-              <p>My Construction Status</p>
-            </a>
-          </li>
-          <li class="nav-item ">
-            <a class="nav-link" href="/user/documents">
-                  <i class="fas fa-folder-open"></i>         
-              <p>My Design Documents</p>
-            </a>
-          </li>
-                    
-            <li class="nav-item ">
             <a class="nav-link" href="/user/payment">
-                    <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-shopping-cart"></i>
               <p>My Payment</p>
             </a>
           </li>
 
-          
-{{!-- 
-            <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
+          <li class="nav-item ">
+            <a class="nav-link" href="/user/documents">
+              <i class="fas fa-folder-open"></i>
+              <p>My Design Documents</p>
             </a>
-          </li> --}}
+          </li>
 
-          {{!-- <li class="nav-item active-pro ">
-            <a class="nav-link" href="https://tawk.to/chat/6011688ea9a34e36b970eeae/1et200rll" target="_blank">
-              <i class="material-icons">message</i>
-              <p>Message Us</p>
+          <li class="nav-item ">
+            <a class="nav-link" href="/user/construction">
+              <i class="fas fa-hard-hat"></i>
+              <p>My Construction Status</p>
             </a>
-          </li> --}}
+          </li>
+
+
 
 
 
@@ -192,8 +183,8 @@ The above copyright notice and this permission notice shall be included in all c
                       </div>
                       <div class="col-md-4">
                         <div class="form-group">
-                          <label class="bmd-label-floating">Nearest city</label>
-                          <input type="text" class="form-control" value="{{user.city}}" disabled>
+                          <label class="bmd-label-floating">Nearest Town</label>
+                          <input type="text" class="form-control" value="{{user.town}}" disabled>
                         </div>
                       </div>
                     </div>

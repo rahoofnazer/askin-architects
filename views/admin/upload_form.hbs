@@ -1,0 +1,27 @@
+<div class="container"></div>
+<div class="row">
+
+    <div class="col-md-6">
+        <h2 class="text-center my-5">Upload GDrive Link</h2>
+
+        <h3 class="text-left container text-bold" style="font-weight: 600;"> User Details</h3>
+        <label class="text-left container">
+            Name : {{user.name}} <br>
+            Place : {{user.town}}, {{user.location}}<br> <br>
+            Stage One Status : {{user.StageOnePaidStatus}}<br>
+            Stage One Paid Date : {{user.StageOnePaidDate}}<br>
+<br><br>
+            Stage Two Status : {{user.StageTwoPaidStatus}}<br>
+            Stage Two Paid Date : {{user.StageTwoPaidDate}}<br>
+
+        </label>
+
+        <form action="/admin/upload_link/{{user._id}}" class="m-5" method="POST">
+            <label for="">Google Drive link</label>
+            <input type="url" name="gdrive"  class="form-control" required>
+
+            <button type="submit" class="btn btn-success mt-4">Submit</button>
+        </form>
+
+    </div>
+</div>

@@ -3,6 +3,9 @@ const user_helper = require('../helpers/user-helper');
 const { route } = require('./public');
 var router = express.Router();
 const paypal = require('paypal-rest-sdk');
+const nodemailer = require("nodemailer");
+const { getMaxListeners } = require('../app');
+
 
 const verifyuser=(req,res,next)=>{
   console.log("Verify user called")
@@ -14,21 +17,45 @@ const verifyuser=(req,res,next)=>{
 }
 
 router.post('/registerform',(req,res)=>{
-
+  
   req.body.dateTime = new Date();
-
   user_helper.doSignup(req.body).then((response)=>{
+
   console.log(response)
-  res.redirect('/user/message')
+
+  let userSigned=response
+
+
+
+
+
+  let transporter = nodemailer.createTransport({
+    service: "gmail",
+
+    auth: {
+      user: "noreply.askinarchitects@gmail.com", 
+      pass: "noreply001",  
+    },
+  });
+  let mailOptions = {
+
+    from: "noreply.askinarchitects@gmail.com", // sender address
+    to: userSigned.email, // list of receivers
+    subject: "Welcome to askinarchitects.com!", // Subject line
+    html: "<b><h3>Thank you for using our online Architectural services. You can now get your dream home designed by qualified architects online from the comfort of your location anywhere in the world.</h3></b><br>Please login to our design hub on askinarchitects.com using your Username and Password. Then you will be able to navigate through the following features: <br><br><b>STEP 1 - My Design Requirements</b><br>We have now received your Design Requirements which you can see in this tab. <br><br><b>STEP 2 - My Payment</b><br>This Tab is where you make the initial payment of Rs 4997 ($68.91) for the Preliminary Floor plans. One of our architects will be contacting you within 48 hours of making the payment.<br><br><b>STEP 3 - My Design Documents</b><br>The My Design Documents folder can be accessed at any time using your Login details. Your architect will be uploading your floor plans and other design sketches and drawings to this folder for your feedback and further discussions.<br><br><b>STEP 4 - My Construction Status</b><br>The My Construction Status Tab will become active once the Architectural design drawings are finalized and actual construction begins.<br><br><br><b>Please feel free to contact us via email (askinarchitects@gmail.com) or WhatsApp (+91 8089315301). You may also use the Chat feature in your login on the Design Hub.</b><br><br><br> <hr>Thank you and Kind Regards,<br>askinarchitects.com",
+  };
+
+  transporter.sendMail(mailOptions, function(err,data){
+    if (err) {
+      console.log(err)
+    }else{
+      console.log("Done auto-email!")
+    }
+  })
+
+  res.render('public/Message')
   })
 })
-
-router.get('/message',(req,res)=>{
-  let user=req.session.user
-
-  res.render('public/Message',{user})
-})
-
 
 
 router.get('/', function(req, res, next) {
@@ -137,8 +164,8 @@ router.get("/pay_stage_one", verifyuser,(req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: "http://localhost:3000/user/stageone_success",
-      cancel_url: "http://localhost:3000/user/cancelled_stageone",
+      return_url: "https://askinarchitects.in/user/stageone_success",
+      cancel_url: "https://askinarchitects.in/user/cancelled_stageone",
     },
     transactions: [
       {
@@ -257,8 +284,8 @@ router.get("/pay_stage_two", verifyuser,(req, res) => {
       payment_method: "paypal",
     },
     redirect_urls: {
-      return_url: "http://localhost:3000/user/stagetwo_success",
-      cancel_url: "http://localhost:3000/user/cancelled_stagetwo",
+      return_url: "https://askinarchitects.in/user/stagetwo_success",
+      cancel_url: "https://askinarchitects.in/user/cancelled_stagetwo",
     },
     transactions: [
       {

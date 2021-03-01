@@ -54,7 +54,7 @@ router.post('/login',(req,res)=>{
 })
 
 
-router.get('/users',(req,res)=>{
+router.get('/users',verifyAdmin,(req,res)=>{
 
   admin_helper.getAllUsers().then((users)=>{
 
@@ -63,9 +63,11 @@ router.get('/users',(req,res)=>{
 
 })
 
-router.get('/paidUsers',(req,res)=>{
+router.get('/paidUsers',verifyAdmin,(req,res)=>{
 
-  admin_helper.getAllUsers().then((users)=>{
+  admin_helper.getPaidUsers().then((users)=>{
+
+
 
     res.render('admin/paid-users',{users})
   })
@@ -74,24 +76,37 @@ router.get('/paidUsers',(req,res)=>{
 
 
 
-router.get('/documents',(req,res)=>{
+router.get('/uploaddesign',verifyAdmin,(req,res)=>{
 
- 
-  res.render('admin/design_documents')
+  admin_helper.getPaidUsers().then((users)=>{
+
+    res.render('admin/upload_design',{users})
+  })
+
 })
 
-// productHelpers.getAllProducts().then((products)=>{
 
-//   res.render('user/view-products',{products,user,cartCount});
 
-// })
 
-// router.post('/login',(req,res)=>{
-// admin_helper.doSignup(req.body).then((response)=>{
-//   console.log(response)
-//   res.redirect('/admin/viewProducts')
-//   })
-// })
+router.get('/upload_form/:id',verifyAdmin,async(req,res)=>{
+
+  let user=await admin_helper.getUserDetails(req.params.id)
+  console.log(user);
+
+    res.render('admin/upload_form',{user})
+  })
+
+
+
+
+router.post('/upload_link/:id',verifyAdmin,(req,res)=>{
+
+  let id=req.params.id
+  admin_helper.updateUploadLink(req.params.id,req.body).then(()=>{
+    res.redirect('/admin/uploaddesign')
+
+  })
+})
 
 
 

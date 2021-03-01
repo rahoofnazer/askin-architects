@@ -43,53 +43,44 @@ The above copyright notice and this permission notice shall be included in all c
         </a></div>
       <div class="sidebar-wrapper">
         <ul class="nav">
-          <li class="nav-item ">
+
+          <li class="nav-item active  ">
             <a class="nav-link" href="/user/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
             </a>
-          </li>                                                    
-                                                                          {{!-- tab here --}}
+          </li>
+
+          {{!-- tab here --}}
           <li class="nav-item ">
             <a class="nav-link" href="/user/mydesign">
-                    <i class="far fa-object-group"></i>
+              <i class="far fa-object-group"></i>
               <p>My Design Requirements</p>
             </a>
           </li>
 
           <li class="nav-item ">
-            <a class="nav-link" href="/user/construction">
-<i class="fas fa-hard-hat"></i>
-              <p>My Construction Status</p>
-            </a>
-          </li>
-          <li class="nav-item active">
-            <a class="nav-link" href="/user/documents">
-                  <i class="fas fa-folder-open"></i>         
-              <p>My Design Documents</p>
-            </a>
-          </li>
-                    
-            <li class="nav-item ">
             <a class="nav-link" href="/user/payment">
-                    <i class="fas fa-shopping-cart"></i>
+              <i class="fas fa-shopping-cart"></i>
               <p>My Payment</p>
             </a>
           </li>
 
-          
-{{!-- 
-            <li class="nav-item active-pro ">
-            <a class="nav-link" href="./upgrade.html">
+          <li class="nav-item ">
+            <a class="nav-link" href="/user/documents">
+              <i class="fas fa-folder-open"></i>
+              <p>My Design Documents</p>
             </a>
-          </li> --}}
+          </li>
 
-          {{!-- <li class="nav-item active-pro ">
-            <a class="nav-link" href="https://tawk.to/chat/6011688ea9a34e36b970eeae/1et200rll" target="_blank">
-              <i class="material-icons">message</i>
-              <p>Message Us</p>
+          <li class="nav-item ">
+            <a class="nav-link" href="/user/construction">
+              <i class="fas fa-hard-hat"></i>
+              <p>My Construction Status</p>
             </a>
-          </li> --}}
+          </li>
+
+
 
 
 
@@ -171,7 +162,7 @@ The above copyright notice and this permission notice shall be included in all c
         <div class="container-fluid">
           <div class="card">
             <div class="card-header card-header-primary">
-              <h3 class="card-title">Design Documents</h3>
+              <h3 class="card-title">My Design Documents</h3>
 
             </div>
             <div class="card-body">
@@ -179,9 +170,24 @@ The above copyright notice and this permission notice shall be included in all c
                 <div class="col-md-12">
                   {{!-- <h4 class="card-title">Notifications Style</h4> --}}
                   <div class="alert alert-plain">
-                    <span> Our architects will let you know whenever your home's design is ready and you can download it from right here! </span>
-                      
-                      Feel free to<a class="" style=" font-weight:500; rgb(0, 0, 0);" href="https://"> contact us</a> for more details. 
+
+                    {{#if user.gdrive}}
+                    Your Design Documents are ready and it is uploaded on a secured Google Drive Folder. <br>
+                                          Feel free to<a class="" style=" font-weight:500; rgb(0, 0, 0);" href="/contact"> contact us</a> for more details and further discussions. 
+
+                    {{else}}
+                                        <span> Our architects will let you know whenever your home's design is ready and you can download it from right here! </span>
+                      Feel free to<a class="" style=" font-weight:500; rgb(0, 0, 0);" href="/contact"> contact us</a> for more details. 
+
+                    {{/if}}
+
+                      <div class="line"></div>
+
+                         {{#if user.gdrive}}
+                         <a href="{{user.gdrive}}" target="_blank"><button class="btn btn-success btn-icon-holder my-4">Open Google Drive &nbsp; <i class="fab fa-google-drive"></i></button></a>
+                         
+                    {{else}}
+                    {{/if}}
                   </div>
                   
               </div>

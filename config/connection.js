@@ -6,8 +6,8 @@ const state={
 
 module.exports.connect=function(done){
 
-    const url='mongodb://localhost:27017/askin'
-    // const url='mongodb://askinAdmin:admin%40$.890@localhost:27017/askin'
+    //const url='mongodb://localhost:27017/askin'
+     const url='mongodb://askinAdmin:admin%40$.890@localhost:27017/askin'
 
     const dbname='askin'
 

@@ -47,7 +47,7 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="sidebar-wrapper">
         <ul class="nav">
 
-          <li class="nav-item active  ">
+          <li class="nav-item   ">
             <a class="nav-link" href="/user/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -62,7 +62,7 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
 
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/user/payment">
               <i class="fas fa-shopping-cart"></i>
               <p>My Payment</p>
@@ -83,7 +83,12 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
 
-
+            <li class="nav-item active-pro" style="padding-bottom: 5rem;">
+            <a class="nav-link" href="/user/logout"  onclick="return confirm('Are you sure want to log out ?')">
+              <i class="material-icons">logout</i>
+              <p>Log out</p>
+            </a>
+          </li>
 
 
 
@@ -122,7 +127,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <a class="dropdown-item" href="/user/mydesign">Profile</a>
                   {{!-- <a class="dropdown-item" href="#">Settings</a> --}}
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/user/logout">Log out</a>
+                  <a class="dropdown-item" href="/user/logout" onclick="return confirm('Are you sure want to log out ?')">Log out</a>
                 </div>
               </li>
             </ul>
@@ -159,7 +164,7 @@ The above copyright notice and this permission notice shall be included in all c
                                     {{#if user.StageOnePaidStatus}}
                                       <span class="text-success"> Thank you {{user.name}}, We have received your payment of {{user.StageOnePaidCurrency}} {{user.StageOnePaidAmount}} for the Stage I development of design of your dream home!</span>
                                     {{else}}
-                                      <span> Select a plan to get your dream home designed by us.</span>
+                                      <span> Please make the Stage I payment to begin engaging with us. One of our qualified Architects will contact you within 48 hrs of making the payment.</span>
                                     {{/if}}
 
                     {{/if}}
@@ -179,8 +184,8 @@ The above copyright notice and this permission notice shall be included in all c
                                 <span class="text-muted">(68.91 U. S. dollars)</span>
                             </div>
                             <div class="plan-list">
-                                <ul style="padding: 0%;" style="padding: 0%;">
-                                    <li><i class="fas fa-dot-circle"></i>Preliminary Floor plans within 7 days of payment</li>
+                                <ul style="padding: 0%;" >
+                                    <li><i class="fas fa-dot-circle"></i>Preliminary Floor plans within <br> <span class="ml-4">7 days of payment</span></li>
                                     <li><i class="fas fa-dot-circle"></i>Up to three floor plan revisions.</li>
                                     <li><i class="fas fa-dot-circle"></i>Site Plan</li>
                                     <li><i class="fas fa-dot-circle"></i>Area Calculations</li>

@@ -81,7 +81,12 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
 
-
+            <li class="nav-item active-pro" style="padding-bottom: 5rem;">
+            <a class="nav-link" href="/user/logout"  onclick="return confirm('Are you sure want to log out ?')">
+              <i class="material-icons">logout</i>
+              <p>Log out</p>
+            </a>
+          </li>
 
 
 
@@ -123,7 +128,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <a class="dropdown-item" href="/user/mydesign">Profile</a>
                   {{!-- <a class="dropdown-item" href="#">Settings</a> --}}
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/user/logout">Log out</a>
+                  <a class="dropdown-item" href="/user/logout" onclick="return confirm('Are you sure want to log out ?')">Log out</a>
                 </div>
               </li>
             </ul>
@@ -238,10 +243,22 @@ The above copyright notice and this permission notice shall be included in all c
                   </div>
                   <div class="card-footer">
                     <div class="stats">
-                      <span style="font-weight: 400; font-size: 13px;"> <span style="font-weight: 600;">Step 3 : </span>
+
+                       {{#if user.gdrive}}
+                         <span style="font-weight: 400; font-size: 13px;"> <span style="font-weight: 600;"><i class="fas fa-check-circle"></i> Step 3 : </span>
+                        Your Design Documents folder can be accessed at any time via this tab. Your architect had uploaded
+                        your floor plans and other design sketches and drawings to the folder for your
+                        feedback and further discussions. </span>
+                       {{else}}
+                                             <span style="font-weight: 400; font-size: 13px;"> <span style="font-weight: 600;">Step 3 : </span>
                         Your Design Documents folder can be accessed at any time via this tab. Your architect will be
                         uploading your floor plans and other design sketches and drawings to the folder for your
                         feedback and further discussions. </span>
+                       {{/if}}
+
+
+
+
                     </div>
                   </div>
                 </div>

@@ -44,7 +44,7 @@ The above copyright notice and this permission notice shall be included in all c
       <div class="sidebar-wrapper">
         <ul class="nav">
 
-          <li class="nav-item active  ">
+          <li class="nav-item   ">
             <a class="nav-link" href="/user/dashboard">
               <i class="material-icons">dashboard</i>
               <p>Dashboard</p>
@@ -73,14 +73,19 @@ The above copyright notice and this permission notice shall be included in all c
             </a>
           </li>
 
-          <li class="nav-item ">
+          <li class="nav-item active">
             <a class="nav-link" href="/user/construction">
               <i class="fas fa-hard-hat"></i>
               <p>My Construction Status</p>
             </a>
           </li>
 
-
+            <li class="nav-item active-pro" style="padding-bottom: 5rem;">
+            <a class="nav-link" href="/user/logout"  onclick="return confirm('Are you sure want to log out ?')">
+              <i class="material-icons">logout</i>
+              <p>Log out</p>
+            </a>
+          </li>
 
 
 
@@ -141,7 +146,7 @@ The above copyright notice and this permission notice shall be included in all c
                   <a class="dropdown-item" href="#">Profile</a>
                   {{!-- <a class="dropdown-item" href="#">Settings</a> --}}
                   <div class="dropdown-divider"></div>
-                  <a class="dropdown-item" href="/user/logout">Log out</a>
+                  <a class="dropdown-item" href="/user/logout" onclick="return confirm('Are you sure want to log out ?')">Log out</a>
                 </div>
               </li>
             </ul>
